@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/QTWebServer">
+        <file>Medias/GaumontWelcome.png</file>
+    </qresource>
+</RCC>
