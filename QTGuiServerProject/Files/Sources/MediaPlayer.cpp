@@ -50,13 +50,9 @@ MediaPlayer::MediaPlayer( QWidget *parent )
                                 
     m_pQPlaylistLive->addMedia( QUrl( "D:/Light In Chaos/Prospects-Client/Pedro/Gaumont Pathe/QTGuiServerProject/Resources/Medias/foot.mp4" ) );
 
-    //QBoxLayout *displayLayout = new QHBoxLayout;
-    //displayLayout->addWidget( m_pQVideoWidget );
-    //ui.waitingWidget->setLayout( displayLayout );
-    connect( m_pQMediaPlayer, SIGNAL( mediaStatusChanged( QMediaPlayer::MediaStatus ) ),
-        this, SLOT( statusChanged( QMediaPlayer::MediaStatus ) ) );
+    connect( m_pQMediaPlayer, SIGNAL( mediaStatusChanged( QMediaPlayer::MediaStatus ) ), this, SLOT( statusChanged( QMediaPlayer::MediaStatus ) ) );
 
-
+    this->showFullScreen();
    
     //Action();     
 }
@@ -74,13 +70,11 @@ void MediaPlayer::statusChanged( QMediaPlayer::MediaStatus status )
     switch ( status ) {
   //  case QMediaPlayer::PlayingState:
     case QMediaPlayer::BufferedMedia:
-       // _sleep( 1000 );
+        _sleep( 500 );
         go2();
         break;
     case QMediaPlayer::LoadingMedia:
         //setStatusInfo( tr( "Loading..." ) );
-        break;
-
         break;
     case QMediaPlayer::StalledMedia:
         //setStatusInfo( tr( "Media Stalled" ) );
@@ -123,10 +117,6 @@ void MediaPlayer::go( QString p_QStringPlayList )
         m_pQMediaPlayer->setPlaylist( m_pQPlaylistPub2 );
 
     }
-    // ui.Info->layout()->addWidget( videoWidget );
-    // ui.Video->layout()->addWidget( videoWidget );
-
-
     // ui.centralWidget->layout()->addWidget( videoWidget );
    // m_pQMediaPlayer->setMedia( QUrl( "D:/Light In Chaos/Prospects-Client/Pedro/Gaumont Pathe/QTGuiServerProject/Resources/Medias/foot.mp4" ) );
     play == true? m_pQMediaPlayer->play(): ui.DisplayLayout->removeWidget( m_pQVideoWidget );
@@ -134,13 +124,7 @@ void MediaPlayer::go( QString p_QStringPlayList )
 
 void MediaPlayer::go2()
 {
-    m_pQMediaPlayer->pause();
     ui.DisplayLayout->removeWidget( ui.waitingWidget );
     ui.DisplayLayout->addWidget( m_pQVideoWidget );
-    this->showMaximized();
-   // _sleep( 500 );
-
-    m_pQMediaPlayer->play();
-
-    //this->showFullScreen();
+    this->showFullScreen();
 }

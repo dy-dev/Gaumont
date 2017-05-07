@@ -13,7 +13,7 @@ QTWebServer::QTWebServer( QWidget *parent, RequestsHandler * handler )
     : m_pWebSocketServer( new QWebSocketServer( QStringLiteral( "Gaumont Web Server" ), QWebSocketServer::NonSecureMode, this ) )
     , m_pRequestsHandler( handler )
 {
-    if ( m_pWebSocketServer->listen(/*QHostAddress::Any*/QHostAddress( "192.168.0.50" ), 1234 ) )
+    if ( m_pWebSocketServer->listen(/*QHostAddress::Any*/QHostAddress( "192.168.0.50" ), 1234 ) || m_pWebSocketServer->listen(/*QHostAddress::Any*/QHostAddress( "192.168.0.16" ), 1234 ) )
     {
         auto address = m_pWebSocketServer->serverAddress();
         auto id = address.toString();
