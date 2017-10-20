@@ -1,0 +1,396 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  margin-top: 10px;
+  background-color: #343336;/* For browsers that do not support gradients */  
+  /*background: -webkit-radial-gradient(#5f5672, #343336, #2a282d);*/ /*Safari 5.1 to 6.0*/
+  /*background: -o-radial-gradient(#5f5672, #343336, #2a282d);*/ /* For Opera 11.6 to 12.0 */
+  /*background: -moz-radial-gradient(#5f5672, #343336, #2a282d);*/ /* For Firefox 3.6 to 15 */
+  /*background: radial-gradient(#998fad, #343336, #2a282d );*/ /* Standard syntax (must be last) */
+}
+
+div#wrap {
+  width: 90%;
+  height: 95%;
+  margin: auto;
+  /*background-color: #343336;*/
+}
+div.ban {
+  width: 100%;
+  display: block;
+  /*border: 1px #555 solid ;*/
+  /*margin: 2px;*/
+}
+div#one {
+  height: 180px;
+}
+div#two {
+  height: 400px;
+  display: table;
+}
+/*div#two:child {
+  display: inline-block;
+}*/
+div#three {
+  height: 130px;
+}
+
+div.panel {
+  width: 400px;
+  height: 100%;
+  display: inline-block;
+  /*background-color: #444;*/
+  display: table;
+}
+div.panel#stream {
+  position: relative;
+  float: left;
+}
+div.panel#ads {
+  position: relative;
+  float: right;
+}
+
+div.block {
+  /*width: 33%;*/
+  height: 100%;
+  display: inline-block;
+  /*background-color: #555;*/
+  border-radius: 10px;
+}
+div.block#control {
+  width: 200px;
+  /*background-color: green;*/
+  /*opacity: 0.4;*/
+}
+div.playlist {
+  width: 110px;
+  /*background-color: DarkSlateBlue;*/
+  /*opacity: 0.4;*/
+  position: absolute;
+}
+div.screen {
+  width: 320px;
+  /*background-color: blue;*/
+  /*opacity: 0.6;*/
+  z-index: 1;
+}
+div.screen#s_stream {
+  position: relative;
+  float: right;
+}
+div.screen#s_ads {
+  position: absolute;
+}
+
+div.playlist#p_ads {
+  position: relative;
+  float: right;
+}
+
+div.line_control {
+  width: 100%;
+  height: 30%;
+  /*background-color: grey;*/
+  margin-top: 5px;
+  /*opacity: 0.8;*/
+}
+div#time {
+  width: 50%;
+  height: 70%;
+  margin-left: 50px;
+  padding-top: 10px;
+  font-size: 25px;
+  font-family: Arial;
+  color: rgba(0,0,0,0.7);
+  text-align: center;
+  /*background-color: rgba(250, 250, 250, 0.5);*/
+  background-image: linear-gradient(#5B5A5E, #45434B);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+ul {
+  position: absolute;
+  width: 130%;
+  /*height: 100%;*/
+  text-align: center;
+  line-height: 20px;
+  background-color: #42338e;
+  border-radius: 10px;
+  /*color: #992;*/
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  /*color: gold;*/
+  /*color: #998326;*/
+  color: white;
+  /*margin: 10px;*/
+  /*opacity: 1;*/
+  display: table;
+  /*display:block;*/
+  border: 1px grey solid ;
+  padding-top: 5px;
+  opacity: 1;
+}
+li {
+  width: 100%;
+  height: 20px;
+  padding-top: 7px;
+  border-top: 1px;
+  border-color: grey;
+  border-style: solid;
+  background-color: #352975;
+  color: #FAE47A;
+  opacity: 1;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 10px;
+}
+li:last-child {
+  border-radius: 0px 0px 10px 10px;
+}
+/*li#last*/
+li.infos {
+  height: 80px;
+  font-style: justify;
+}
+ul#wagons li:hover {
+  color:white;
+}
+li.selection {
+  color: red;
+  font-weight: bold;
+}
+
+div.playlist#p_ads ul{
+  right: -60px;
+  padding-left: 30px;
+}
+div.playlist#p_stream ul{
+  left: -60px;
+  padding-right: 30px;
+}
+
+/*images*/
+
+img.test_screen {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  /*opacity: 0.5;*/
+  border: 1px grey solid ;
+  border-radius: 15px;
+}
+img#img_proj{
+  overflow: hidden;
+  width: 700px;
+  height: 375px;
+  border: 2px gold solid;
+  border-radius: 20px;
+  box-shadow: 1px 2px 10px gold;
+  z-index: 2;
+  opacity: 1;
+}
+img.carton {
+  position: absolute;
+  overflow: hidden;
+  width: 150px;
+  height: 120px;
+  z-index: 2;
+}
+img.carton:hover {
+  border: 2px gold solid ;
+}
+
+/*video*/
+
+video.vid {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  /*opacity: 0.5;*/
+  border: 1px grey solid ;
+  border-radius: 15px;
+  background-color: black;
+}
+video#proj_stream {
+  width: 700px;
+  height: 375px;
+  z-index: 1;
+  border: 2px gold solid;
+}
+video#proj_ads {
+  width: 700px;
+  height: 375px;
+  z-index: -1;
+  border: 2px gold solid;
+}
+
+
+/*panneau de control*/
+div.btn_input {
+  width: 80px;
+  height: 40px;
+  background-color: DarkRed;
+  opacity: 0.8;
+  border-radius: 15px;
+  position: relative;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  color: gold;
+  text-align: center;
+  padding-top: 15px;
+}
+div.btn_input:hover {
+  color: lightgrey;
+}
+
+div#btn_stream {
+  float: left;
+}
+div#btn_ads {
+  float: right;
+}
+/*span.ui-icon-caret-1-s {
+  display: inline-block;
+  margin: auto;
+  color: gold;
+}*/
+
+/* bandeau de projection */
+
+div.proj {
+  width: 700px;
+  height: 375px;
+  /*margin-left: 200px;*/
+  margin-top: 15px;
+  display: inline-block;
+}
+
+div.film {
+  width: 150px;
+  height: 200px;
+  margin-bottom: 70px;
+  background-color: #585858;
+  display: inline-block;
+  border-top: 8px black dashed;
+  border-bottom: 8px black dashed;
+}
+
+div.pellicule {
+  width: 100%;
+  height: 180px;
+  margin-top: 10px;
+  background-color: black;
+}
+
+/*cartons d'erreur*/
+
+div.caroussel {
+  width: 980px;
+  height: 90%;
+  margin: 10px;
+}
+
+div.carton {
+  width: 140px;
+  height: 100%;
+  /*margin-right: 10px;*/
+  margin-left: 15px;
+  /*background-color: #BBB;*/
+  display: inline-block;
+  border-radius: 10px;
+}
+.selected {
+  /*border: 2px white solid;*/
+  box-shadow: 0px 0px 10px white;
+}
+
+
+/* accordéon */
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    /*background-color: #eee;*/
+    /*color: #444;*/
+    cursor: pointer;
+    /*padding-top: 5px;*/
+    width: 100%;
+    /*text-align: left;*/
+    /*border: none;*/
+    outline: none;
+    transition: 0.4s;
+    display: block;
+}
+li.accordion {
+  color: gold;
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+/*.accordion.active, .accordion:hover {
+    background-color: #ddd;
+    color: black;
+    font-weight: bold;
+}*/
+li.active, .accordion:hover {
+    background-color: #ddd;
+    color: black;
+    font-weight: bold;
+}
+/* Style the accordion panel. Note: hidden by default */
+li.subMenu1, li.subMenu2 {
+  background-color: #554993;
+}
+li.subMenu1{
+    padding-top: 5px;
+    /*background-color: white;*/
+    display: none;
+}
+li.subMenu2 {
+    padding-top: 5px;
+    /*background-color: white;*/
+    display: none;
+}
+

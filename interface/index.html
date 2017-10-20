@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"> -->
+  <script src="js/jquery/jquery.js" type="text/javascript"></script>
+  <!-- <script src="js/jquery/jquery-ui.min.js" type="text/javascript"></script> -->
+  <script src="js/front.js" type="text/javascript"></script>
+  <script src="js/serveur.js" type="text/javascript"></script>
+  <title>Interface Pathé-Gaumont</title>
+</head>
+<body>
+  <div id="wrap">
+    <div class="ban" id="one">
+      <div class="panel" id="stream">
+        <div class="block playlist" id="p_stream">
+          <ul class="title">LIVE - TITRE
+            <li>source</li>
+            <li>infos</li>
+            <li class="infos">Description Lorem ipsum dolor sit amet. Magnam, quod dolore modi. Reprehenderit beatae, laudantium!</li>
+          </ul>
+        </div>
+        <div class="block screen" id="s_stream">
+          <!-- <img class="test_screen" id="img_stream" src="images/test_stream.jpg" alt="output_stream"> -->
+          <video class="vid" id="vid_stream" width="320" onclick="playPause(vid_stream)">
+            <source src="videos/foot.mp4" type="video/mp4" >
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+      </div>
+      <div class="block" id="control">
+        <div class="line_control">
+          <div id="time">08:30</div>
+        </div>
+        <div class="line_control"></div>
+        <div class="line_control">
+          <!-- Bouton de controle pour lancer un live ou une pub a utiliser pour le controle par le tel -->
+          <div class="btn_input" id="btn_stream" onclick="launch(stream)">
+            Diffuser </br> <!-- <span class="ui-icon ui-icon-caret-1-s"></span> -->
+            <svg height="30" width="30">
+              <polygon points="0,5 30,5 15,20" style="fill:gold" />
+            </svg>
+          </div>
+          <div class="btn_input" id="btn_ads"  onclick="launch(ads)">
+            Diffuser </br><!-- <span class="ui-icon ui-icon-caret-1-s"></span> -->
+            <svg height="30" width="30">
+              <polygon points="0,5 30,5 15,20" style="fill:gold" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="panel" id="audiopanel">
+        <div class="block screen" id="s_ads">
+          <!-- <img class="test_screen" id="img_ads" src="images/test_ads.jpg" alt="output_ads"> -->
+          <video class="vid" id="vid_ads" width="320" onclick="playPause(vid_ads)">
+            <source class="srcVid" id="src_ads" src="videos/GaumontPathe1.mp4" type="video/mp4" >
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+        <div class="block playlist" id="p_ads">
+          <ul class="title" id="wagons">PUBLICITE
+            <li class="accordion subPathe" onclick="accordion(1)">Wagon Pathé +</li>
+              <!-- <ul> -->
+                <li class="subMenu1" onclick="wagon('Pathé 1')">Pathé 1</li>
+                <li class="subMenu1" onclick="wagon('Pathé 2')">Pathé 2</li>
+                <li class="subMenu1" onclick="wagon('Printemps')">Printemps</li>
+              <!-- </ul> -->
+            
+            <li class="accordion subPub" onclick="accordion(2)">Wagon Pub +</li>
+              <!-- <ul> -->
+                <li class="subMenu2" onclick="wagon('Oasis')">Oasis</li>
+                <li class="subMenu2" onclick="wagon('MMS')">MMS</li>
+              <!-- </ul> -->
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="ban" id="two">
+      <div class="film">
+        <div class="pellicule"> </div>
+      </div>
+      <div class="block proj">
+        <video class="vid" id="proj_ads" width="700" onended="endWagon()">
+            <source class="srcVid" id="src_adsproj" src="" type="video/mp4" >test
+        </video>
+        <!-- mettre un carton fin du live en fin -->
+        <video class="vid" id="proj_stream" width="700">
+            <source class="srcVid" id="src_proj" src="videos/foot.mp4" type="video/mp4" >
+            Your browser does not support HTML5 video.
+        </video>
+        <img class="test_screen" id="img_proj" src="images/GaumontWelcome.png" alt="">
+      </div>
+      <div class="film">
+        <div class="pellicule"> </div>
+      </div>
+    </div>
+
+    <div class="ban" id="three">
+      <div class="block caroussel">
+        <div class="carton"></div>
+        <div class="carton"></div>
+        <div class="carton" id="welcome" onclick="carton(welcome)">
+          <img class="test_screen carton selected" id="carton_welcome" src="images/GaumontWelcome.png" alt="carton1">
+        </div>
+        <div class="carton" id="error" onclick="carton(error)">
+          <img class="test_screen carton" id="carton_error" src="images/ErreurDiffusion.jpg" alt="carton2">
+        </div>
+        <div class="carton"></div>
+        <div class="carton"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
